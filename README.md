@@ -3,6 +3,9 @@ Ariadne demo app showing features like:
  - resolvers
  - mutation
  - subscription
+ 
+
+For more details about Ariadne visit: [ariadne documentation](https://ariadnegraphql.org/docs/intro)
 
 ### Requirements
 ```
