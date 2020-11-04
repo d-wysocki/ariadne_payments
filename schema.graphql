@@ -1,0 +1,40 @@
+type Query {
+    payment(id: ID!): Payment,
+    payments(status: PaymentStatus): [Payment]
+}
+type Mutation {
+    createPayment(input:PaymentInput!): PaymentPayload
+}
+
+type Subscription {
+    payments(status: PaymentStatus): Payment
+}
+
+type PaymentPayload {
+    id: ID!
+    status: Boolean!
+    error: String
+    payment: Payment!
+}
+
+input PaymentInput {
+    amount: Int!
+    status: PaymentStatus!
+    creditCard: String!
+}
+
+type Payment {
+    id: ID!
+    amount: Int!
+    status: PaymentStatus!
+    creditCard: String!
+}
+
+enum PaymentStatus {
+    NOT_CHARGED
+    PENDING
+    CHARGED
+    REFUNDED
+    REFUSED
+    CANCELLED
+}
